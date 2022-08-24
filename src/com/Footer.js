@@ -4,7 +4,16 @@ class Footer extends React.Component{
 
     render(){
         return(
-        <h1>by Alaaabualadoos</h1>
+            <>
+        <h3>by Alaaabualadoos</h3>
+        <style jsc>{`
+h3{
+    color:red;
+}
+       `}
+
+        </style>
+        </>
         )
     }
 }
