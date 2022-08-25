@@ -1,29 +1,53 @@
+
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-
+import { Row,Col,Container } from "react-bootstrap";
+import Data from "./data.json"
+import '../index.css';
 
 class HornedBeast extends React.Component {
-
+  constructor(props){
+    super(props);
+    this.state={
+      numOfFavorites:""
+    }
+  }
+  incrementNumOfFavorites =()=>{
+this.setState({
+  numOfFavorites:this.state.numOfFavorites+"❤️"
+})
+  }
     render(){
+      
+
       return(
         <div>
-<h2>{this.props.title}</h2>
-<p>{this.props.disc}</p>
-<img src={this.props.img} alt={this.props.alt} title={this.props.title}></img>
-<style jsx>
-  {`
-img{
-  width=600px;
-  height=300px;
-}
-  `}
-  </style>
-</div>
-      )
-    }
 
+
+ <Col>
+    <Card style={{ width: '18rem' }} className="car">
+      <Card.Body>
+      <Card.Title style={{color:'blue'}}>{this.props.title}</Card.Title>
+      <Card.Img variant="top" src={this.props.img} style={{width:'10rem',height:'15rem'}} onClick={this.incrementNumOfFavorites}/>
+      <Card.Text>
+        {this.props.description}
+      </Card.Text>
+      <Card.Text style={{color:'red'}}>
+        Favorites:{this.state.numOfFavorites}
+      </Card.Text>
+    </Card.Body>
+  
+       
+</Card>
+</Col>
+
+
+</div>
+
+      )
+      }
   }
   
 export default HornedBeast;
