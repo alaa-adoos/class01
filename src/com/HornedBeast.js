@@ -27,10 +27,10 @@ this.setState({
 
 
  <Col>
-    <Card style={{ width: '18rem' }} className="car">
+    <Card style={{ width: '18rem' }} onClick={()=>this.props.myFunction(this.props.title)}>
       <Card.Body>
       <Card.Title style={{color:'blue'}}>{this.props.title}</Card.Title>
-      <Card.Img variant="top" src={this.props.img} style={{width:'10rem',height:'15rem'}} onClick={this.incrementNumOfFavorites}/>
+      <Card.Img variant="top" src={this.props.src} style={{width:'10rem',height:'15rem'}} onClick={this.incrementNumOfFavorites}/>
       <Card.Text>
         {this.props.description}
       </Card.Text>
